@@ -1,4 +1,4 @@
-test
+
 <a [routerLink]="['/Home']">Home</a>
 <a [routerLink]="['/ProductDetail']">Product Details</a>
 <router-outlet></router-outlet>
