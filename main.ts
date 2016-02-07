@@ -1,22 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {Component} from 'angular2/core';
-@Component({
-	selector: 'hello-world',
-	template: '<h1>Hello {{ name }}!</h1>'
-})
 
-export class HelloWorldComponent {
-	name: string;
+import ApplicationComponent from 'app/components/application/application';
 
-	constructor() {
-		this.name = 'HelloWorldComponent';
-	}
 
-	test(){
-		return "aaa";
-	}
-}
-
-console.log('HelloWorldComponent module is loaded'
-
-bootstrap(HelloWorldComponent);
+bootstrap(ApplicationComponent);

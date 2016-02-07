@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="//npmcdn.com/angular2@2.0.0-beta.0/bundles/angular2-polyfills.js"></script>
-		<script src="//npmcdn.com/typescript@1.7.5/lib/typescript.js"></script>
-		<script src="//npmcdn.com/systemjs@0.19.8/dist/system.src.js"></script>
-		<script src="//npmcdn.com/rxjs@5.0.0-beta.0/bundles/Rx.js"></script>
-		<script src="//npmcdn.com/angular2@2.0.0-beta.0/bundles/angular2.dev.js"></script>
-		<script>
-			System.config({
-				transpiler: 'typescript',
-				typescriptOptions: {emitDecoratorMetadata: true},
-				packages: {app: {defaultExtension: 'ts'}}
-			});
-			
-<!--
-Promise.all([
-System.import('./main.ts'),
-System.import('./app/app.ts')
-]).then(function (modules) {
-var moduleNames = modules
-.map(function (m) { return m.name; })
-.join(', ');
-console.log('The following modules are loaded: ' + moduleNames);
-});-->
+		<title>Angular 2 test app</title>
+		<style>body{padding-top:70px}</style>
 
-		</script>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+		<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+		<script src="node_modules/typescript/lib/typescript.js"></script>
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="node_modules/systemjs/dist/system.src.js"></script>
+		<script src="node_modules/rxjs/bundles/Rx.js"></script>
+
+		<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+		<script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+		<script src="config.js"></script>
 	</head>
-	<body>
-		<app>Loading...</app>
 
-		<script>System.import('app/app');</script>
-		<hello-world></hello-world>
+	<body>
+
+		<auction-application></auction-application>
+
+		<script>System.import('app')</script>
 	</body>
 </html>
