@@ -9,12 +9,27 @@
 		<script>
 			System.config({
 				transpiler: 'typescript',
-				typescriptOptions: {emitDecoratorMetadata: true}
+				typescriptOptions: {emitDecoratorMetadata: true},
+				packages: {app: {defaultExtension: 'ts'}}
 			});
-			System.import('main.ts');
+			
+<!--
+Promise.all([
+System.import('./main.ts'),
+System.import('./app/app.ts')
+]).then(function (modules) {
+var moduleNames = modules
+.map(function (m) { return m.name; })
+.join(', ');
+console.log('The following modules are loaded: ' + moduleNames);
+});-->
+
 		</script>
 	</head>
 	<body>
+		<app>Loading...</app>
+
+		<script>System.import('app/app');</script>
 		<hello-world></hello-world>
 	</body>
 </html>

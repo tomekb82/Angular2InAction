@@ -5,12 +5,18 @@ import {Component} from 'angular2/core';
 	template: '<h1>Hello {{ name }}!</h1>'
 })
 
-class HelloWorldComponent {
+export class HelloWorldComponent {
 	name: string;
 
 	constructor() {
-		this.name = 'Angular 2';
+		this.name = 'HelloWorldComponent';
+	}
+
+	test(){
+		return "aaa";
 	}
 }
+
+console.log('HelloWorldComponent module is loaded'
 
 bootstrap(HelloWorldComponent);
