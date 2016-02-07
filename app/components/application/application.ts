@@ -37,7 +37,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 
 @RouteConfig([
 	{path: '/', component: HomeComponent,as: 'Home'},
-	{path: '/product/:id', component: ProductDetailComponent, as: 'ProductDetail'}
+	{path: '/product/:id', component: ProductDetailComponent, as: 'ProductDetail', data: {isProd: true}}
 ])
 
 export default class ApplicationComponent {
