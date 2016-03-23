@@ -8,3 +8,10 @@ npm install
 npm install bootstrap --save
 
 npm install jquery --save
+
+
+## RUN
+
+live-server
+
+##

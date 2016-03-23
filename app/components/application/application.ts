@@ -15,6 +15,23 @@ import {ProductDetailComponent} from "./../../components/product";
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
+	selector: 'basic-routing',
+	template: `<a [routerLink]="['/Home']">Home</a>
+		<a [routerLink]="['/ProductDetail', {id: 1234},'ProductDescription']">Product Details</a>
+		<router-outlet></router-outlet>`,
+	directives: [ROUTER_DIRECTIVES]})
+@RouteConfig([
+	{path: '/',component: HomeComponent, as: 'Home'},
+	{path: '/product/:id/...', component: ProductDetailComponent, as: 'ProductDetail'}])
+
+export default class RootComponent{
+	constructor() {
+		console.log('RootComponent');
+	}
+}
+
+/*
+@Component({
 	selector: 'auction-application',
 	providers: [
 //		ProductService
@@ -47,7 +64,7 @@ export default class ApplicationComponent {
 //		this.products = this.productService.getProducts();
 //	}
 	constructor() {
-
-console.log('ApplicationComponent');
+		console.log('ApplicationComponent');
 	}
 }
+*/

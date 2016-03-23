@@ -12,3 +12,7 @@ import {Product} from 'app/services/product-service';
 export default class ProductItemComponent {
 	product: Product;
 }
+
+
+
+
