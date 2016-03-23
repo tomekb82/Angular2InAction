@@ -12,17 +12,25 @@ import  ProductItemComponent from '../product-item/product-item';
 import {Component, bootstrap, provide} from 'angular2/core';
 import {HomeComponent} from './../../components/home';
 import {ProductDetailComponent} from "./../../components/product";
+import {ChatComponent} from "./../../components/chat";
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
 	selector: 'basic-routing',
-	template: `<a [routerLink]="['/Home']">Home</a>
-		<a [routerLink]="['/ProductDetail', {id: 1234},'ProductDescription']">Product Details</a>
-		<router-outlet></router-outlet>`,
+	template: `<div><a [routerLink]="['/Home']">Home</a>
+			<a [routerLink]="['/ProductDetail', {id: 1234},'ProductDescription']">Product Details</a>
+			<a [routerLink]="['./Home', ['Chat']]">Chat</a>
+		</div>
+		<div>
+			<router-outlet></router-outlet>
+			<router-outlet name="chat"></router-outlet>
+		</div>`,
 	directives: [ROUTER_DIRECTIVES]})
 @RouteConfig([
 	{path: '/',component: HomeComponent, as: 'Home'},
-	{path: '/product/:id/...', component: ProductDetailComponent, as: 'ProductDetail'}])
+	{path: '/product/:id/...', component: ProductDetailComponent, as: 'ProductDetail'},
+	{aux: '/chat', component: ChatComponent, as: 'Chat'}]
+)
 
 export default class RootComponent{
 	constructor() {
